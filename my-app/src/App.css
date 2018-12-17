@@ -1,0 +1,66 @@
+.maps-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  #navbar {
+      display: none;
+  }
+  .maps-mobile{
+    display: block;
+  }
+  .maps{
+    display: none;
+  }
+}
+
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+body{
+  background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/web-page-background.jpg');
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow-x: hidden;
+}
+#root{
+  overflow: hidden;
+}
+.App {
+  text-align: center;
+}
+.container{
+  margin-left: 0;
+  margin-top: 2%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
