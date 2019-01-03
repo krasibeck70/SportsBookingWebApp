@@ -1,0 +1,13 @@
+@media screen and (max-width: 800px) {
+    .loading{
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+}
+
+.loading{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}

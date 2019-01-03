@@ -9,6 +9,9 @@
   .maps-mobile{
     display: block;
   }
+  .container{
+    margin: 0 !important;
+  }
   .maps{
     display: none;
   }
@@ -19,10 +22,18 @@ body::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
+
+
 body{
-  background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/web-page-background.jpg');
+  background-image: url('/pictures/backgrounds/screenBackground4_loading.jpg');
   background-size: cover; /* Resize the background image to cover the entire container */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-repeat: no-repeat;  /* Do not repeat the image */
+  overflow-x: hidden;
+}
+.principal{
+  background-image: url('/pictures/backgrounds/screenBackground4_loading.jpg');
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat;  /* Do not repeat the image */
   overflow-x: hidden;
 }
 #root{
@@ -33,7 +44,7 @@ body{
 }
 .container{
   margin-left: 0;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 .App-logo {

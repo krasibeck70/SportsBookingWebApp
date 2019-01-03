@@ -6,8 +6,8 @@ import Maps from './components/GoogleMaps';
 import MapsMobile from './components/GoogleMapsMobile';
 import Navbar from './components/Navbar';
 import Modal from './components/ModalDialog';
-import SportsComplex from './files/sports_complex.json';
 import Axios from 'axios';
+import LoadingComponent from './components/LoadingContent';
 
 class App extends Component {
   constructor() {
@@ -19,31 +19,32 @@ class App extends Component {
     }
   }
   componentWillMount() {
-    console.log(this.state.token + "krasi");
-    const requestBody = {
-      username: 'test123',
-      password: '12345',
-      deviceId: 'testid'
-    }
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
+    //console.log(this.state.token + "krasi");
+    setTimeout(() => {
+      const requestBody = {
+        username: 'test123',
+        password: '12345',
+        deviceId: 'testid'
       }
-    }
-    Axios.post('https://sportbookingsofia.herokuapp.com/auth/login', requestBody, config)
-      .then((res) => {
-        const token = res.data.result.token
-        console.log(token);
-        this.setState({token:token})
-        
-        console.log(this.state.token);
-        this.setState({isLoading:false})
-
-      }).catch(console.error);
+      const config = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      Axios.post('https://sportbookingsofia.herokuapp.com/auth/login', requestBody, config)
+        .then((res) => {
+          const token = res.data.result.token
+          //console.log(token);
+          this.setState({token:token})
+          //console.log(this.state.token);
+          this.setState({isLoading:false})
+  
+        }).catch(console.error);
+    },10)
   }
 
   render() {
-    console.log("render:: " + this.state.token);
+    //console.log("render:: " + this.state.token);
     // var single = this.state.sportsComplex.map((value, index) => {
     //   var name = value.name;
     //   var img = value.image;
@@ -58,10 +59,13 @@ class App extends Component {
     //   );
     // })
     if (this.state.isLoading) {
-      return(<h1>Loading....</h1>);
+      return(<LoadingComponent/>);
     }else{
+      var style = {
+        display: 'none'
+      }
       return (
-        <div className='container'>
+        <div className='container' style={style}>
           {/* {single} */}
           <div className="App row">
   
